@@ -1,0 +1,21 @@
+{
+  "name": "bvat-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucky123-cloud/bvat-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Lucky123-cloud/bvat-backend/issues"
+  },
+  "homepage": "https://github.com/Lucky123-cloud/bvat-backend#readme"
+}
