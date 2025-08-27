@@ -17,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/Lucky123-cloud/bvat-backend/issues"
   },
-  "homepage": "https://github.com/Lucky123-cloud/bvat-backend#readme"
+  "homepage": "https://github.com/Lucky123-cloud/bvat-backend#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "joi": "^18.0.1",
+    "knex": "^3.1.0",
+    "objection": "^3.1.5",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
