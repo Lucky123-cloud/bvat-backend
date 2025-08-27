@@ -6,15 +6,15 @@ A Node.js/Express backend service for Biovision Africa Trust's Agroecology consu
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone 'my url'
    cd bvat-backend
 Install dependencies
 
-bash
+
 npm install
 Set up environment variables
 
-bash
+
 cp .env.sample .env
 Edit .env with your PostgreSQL database credentials.
 
@@ -24,19 +24,19 @@ bash
 createdb bvat_db
 Run migrations
 
-bash
+
 npm run migrate
 Seed the database
 
-bash
+
 npm run seed
 Start the server
 
-bash
+
 npm start
 For development with auto-restart:
 
-bash
+
 npm run dev
 API Endpoints
 GET /api/products - Get products with optional category/certification filters and pagination
@@ -54,17 +54,17 @@ GET /api/stats - Get statistics (counts of products, outlets, FAQs)
 Example Usage
 List products with pagination:
 
-bash
+
 curl "http://localhost:3000/api/products?page=1&limit=5"
 Create a product:
 
-bash
+
 curl -X POST "http://localhost:3000/api/products" \
   -H "Content-Type: application/json" \
   -d '{ "name":"Organic Kale","category":"Vegetable","certification":"Organic","description":"Leafy greens." }'
 Search:
 
-bash
+
 curl "http://localhost:3000/api/search?q=organic"
 Technologies Used
 Node.js
@@ -75,7 +75,6 @@ PostgreSQL with Knex.js
 
 Joi for validation
 
-text
 
 ## Setup and Run Instructions
 
