@@ -46,8 +46,8 @@ A Node.js/Express backend service for Biovision Africa Trust's Agroecology consu
 - npm or yarn
 
 ### 1. Clone the repository
-```bash
-git clone <your-repo-url>
+
+git clone (might decide to clone it in you local or use mine)
 cd bvat-backend
 
 
@@ -59,39 +59,44 @@ bash
 cp .env.sample .env
 Edit .env with your database credentials:
 
-text
+//make sure you have this set up on your side
+
 PORT=3000
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=bvat_db
 DB_USER=your_username
 DB_PASSWORD=your_password
+
 4. Create the database
-bash
 createdb bvat_db
-5. Run migrations
-bash
+
+
+6. Run migrations
 npm run migrate
+
+
 6. Seed the database
-bash
 npm run seed
-7. Start the server
-bash
+
+
+8. Start the server
 npm start
 For development with auto-restart:
-
-bash
 npm run dev
+
+
 🧪 Testing the API
 Using the test script
-bash
+
 # Install axios if not already installed
 npm install axios
 
 # Run the test script
 node api-tests.js
 Using cURL commands
-bash
+
+
 # Make the script executable (Unix-based systems)
 chmod +x test-api.sh
 
@@ -134,13 +139,13 @@ src/
     └── pagination.js    # Pagination utilities
 🔧 Development
 Running migrations
-bash
+
 npm run migrate
 Rolling back migrations
-bash
+
 npm run migrate:rollback
 Running seeds
-bash
+
 npm run seed
 🐛 Troubleshooting
 Common Issues
@@ -176,18 +181,17 @@ Set up database migrations and seeds for reproducible setup
 Added comprehensive API documentation
 
 👨‍💻 Author
-Lucky Baraka -> Web Masters
+Lucky Baraka/Future Star in NodeJS and Golang -> Web Masters
+I know God Gave me this chance, I will use it to make a name for both myself and Web Masters. I will use it to be the best engineer there could be. So help me God
 
 📄 License
 This project is licensed under the ISC License.
 
-text
 
 ## 4. Package.json Scripts Update
 
 Add test scripts to your `package.json`:
 
-```json
 "scripts": {
   "start": "node src/server.js",
   "dev": "nodemon src/server.js",
@@ -197,10 +201,10 @@ Add test scripts to your `package.json`:
   "test:api": "node api-tests.js",
   "test:curl": "./test-api.sh"
 }
+
 5. Running the Tests
 Make sure your server is running:
 
-bash
 npm start
 In a new terminal, run the tests:
 
