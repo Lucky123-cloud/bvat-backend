@@ -60,7 +60,8 @@ A **Node.js + Express** backend service powering **Biovision Africa Trust’s Ag
 * PostgreSQL installed & running
 * npm (or yarn)
 
-### 1. Clone the repository
+### 2. Clone & Install
+
 ```bash
 git clone <your-repo-url>
 cd bvat-backend
@@ -77,44 +78,49 @@ cp .env.sample .env
 
 `.env`
 
-text
+```env
 PORT=3000
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=bvat_db
 DB_USER=your_username
 DB_PASSWORD=your_password
-4. Create the database
-bash
-createdb bvat_db
-5. Run migrations
-bash
-npm run migrate
-6. Seed the database
-bash
-npm run seed
-7. Start the server
-bash
-npm start
-For development with auto-restart:
+```
 
-bash
+### 4. Setup Database
+
+```bash
+createdb bvat_db
+npm run migrate
+npm run seed
+```
+
+### 5. Run the Server
+
+```bash
+npm start
+```
+
+For development (with auto-restart):
+
+```bash
 npm run dev
-🧪 Testing the API
-Using the test script
-bash
-# Install axios if not already installed
+```
+
+---
+
+## 🧪 Testing the API
+
+### Option 1: Node test script
+
+```bash
 npm install axios
 node api-tests.js
-Using cURL commands
-bash
-# Make the script executable (Unix-based systems)
-chmod +x test-api.sh
+```
 
-# Run the tests
-./test-api.sh
-Manual testing with cURL
-bash
+### Option 2: cURL
+
+```bash
 # Get statistics
 curl http://localhost:3000/api/stats
 
@@ -152,82 +158,58 @@ src/
 ├── middlewares/
 │   └── errorHandler.js # Error handler
 └── utils/
-    └── pagination.js    # Pagination utilities
-🔧 Development
-Running migrations
-bash
-npm run migrate
-Rolling back migrations
-bash
-npm run migrate:rollback
-Running seeds
-bash
-npm run seed
-🐛 Troubleshooting
-Common Issues
-Database connection refused
+    └── pagination.js   # Pagination helper
+```
 
-Ensure PostgreSQL is running
+---
 
-Check your .env file has correct credentials
+## 🔧 Development Commands
 
-Verify the database exists: createdb bvat_db
+* Run migrations → `npm run migrate`
+* Rollback migrations → `npm run migrate:rollback`
+* Run seeds → `npm run seed`
 
-Module not found errors
+---
 
-Check all file paths in require statements
+## 🐛 Troubleshooting
 
-Ensure all directories exist
+**Database connection refused**
 
-Validation errors
+* Ensure PostgreSQL is running
+* Verify `.env` credentials
+* Check database exists (`createdb bvat_db`)
 
-Check request body matches expected schema
+**Module not found**
 
-📝 Implementation Notes
-Used modular architecture with separation of concerns (routes, controllers, services, models)
+* Check `require` paths
+* Ensure files exist
 
-Implemented proper error handling middleware
+**Validation errors**
 
-Added input validation using Joi
+* Ensure request body matches expected schema
 
-Configured environment-based configuration
+---
 
-Set up database migrations and seeds for reproducible setup
+## 📝 Notes
 
-Added comprehensive API documentation
+* Modular architecture: **routes, controllers, services, models** separated
+* Centralized error handling middleware
+* Request validation with Joi
+* Database migrations & seeds for reproducibility
+* Environment-based configuration
 
-👨‍💻 Author
-Lucky Baraka -> Web Masters
+---
 
-📄 License
-This project is licensed under the ISC License.
+## 👨‍💻 Author
 
-text
+**Lucky Baraka** — *Future Star in Node.js & Golang (Web Masters)*
 
-## 4. Package.json Scripts Update
+> *“I know God gave me this chance, I will use it to make a name for both myself and Web Masters.
+> I will use it to be the best engineer there could be. So help me God.”*
 
-Add test scripts to your `package.json`:
+---
 
-```json
-"scripts": {
-  "start": "node src/server.js",
-  "dev": "nodemon src/server.js",
-  "migrate": "knex migrate:latest",
-  "seed": "knex seed:run",
-  "migrate:rollback": "knex migrate:rollback",
-  "test:api": "node api-tests.js",
-  "test:curl": "./test-api.sh"
-}
-5. Running the Tests
-Make sure your server is running:
+## 📄 License
 
-bash
-npm start
-In a new terminal, run the tests:
+This project is licensed under the **ISC License**.
 
-bash
-npm run test:api
-Or if you prefer cURL:
-
-bash
-npm run test:curl
