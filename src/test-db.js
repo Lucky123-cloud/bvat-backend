@@ -9,9 +9,12 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD,
 });
 
+console.log("Password type:", typeof process.env.DB_PASSWORD);
+console.log("Password value:", process.env.DB_PASSWORD);
+
 pool.connect((err, client, release) => {
   if (err) {
-    console.error('Error connecting to database:', err);
+    console.error('Error connecting to databases. Please check:', err);
   } else {
     console.log('Connected to database successfully!');
     release();
